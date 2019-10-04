@@ -1,5 +1,8 @@
 package edu.sdccd.mesa.cisc210.fizzbuzz;
 
+/**
+ * Cool simplistic version of fizzbuzz.
+ */
 public class FizzBuzz {
     /**
      * @param args the command line arguments
@@ -10,7 +13,7 @@ public class FizzBuzz {
             System.out.println(i + ": " + fb.doFb(i));
         }
     }
-    
+
     public String doFb(int i) {
         String fb = "";
         if ((i % 3) == 0) {
