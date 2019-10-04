@@ -19,6 +19,9 @@ public class FizzBuzz {
         if ((i % 3) == 0) {
             fb += "fizz";
         }
+        if ((i % 4) == 0) {
+            fb += "bazz";
+        }
         if ((i % 5) == 0) {
             fb += "buzz";
         }
