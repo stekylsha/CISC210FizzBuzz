@@ -1,29 +1,32 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.javamodularity.moduleplugin' version '1.6.0'
+}
 
-sourceCompatibility = '1.8'
-[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+compileJava {
+    options.compilerArgs.addAll(['--release', '11'])
+}
 
-// NetBeans will automatically add "run" and "debug" tasks relying on the
-// "mainClass" property. You may however define the property prior executing
-// tasks by passing a "-PmainClass=<QUALIFIED_CLASS_NAME>" argument.
-//
-// Note however, that you may define your own "run" and "debug" task if you
-// prefer. In this case NetBeans will not add these tasks but you may rely on
-// your own implementation.
-if (!hasProperty('mainClass')) {
-    ext.mainClass = 'edu.sdccd.mesa.cisc210.fizzbuzz.FizzBuzz'
+application {
+    mainClassName = "$moduleName/edu.sdccd.mesa.cisc210.fizzbuzz.FBController"
 }
 
 repositories {
+    jcenter()
     mavenCentral()
-    // You may define additional repositories, or even remove "mavenCentral()".
-    // Read more about repositories here:
-    //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:repositories
+    mavenLocal()
 }
 
 dependencies {
-    // TODO: Add dependencies here ...
-    // You can read more about how to add dependency here:
-    //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies
-    testCompile group: 'junit', name: 'junit', version: '4.10'
+    implementation 'org.slf4j:slf4j-api:2.0.0-alpha1'
+
+    runtimeOnly 'org.slf4j:slf4j-simple:2.0.0-alpha1'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
+}
+
+test {
+    useJUnitPlatform()
 }
