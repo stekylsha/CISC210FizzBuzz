@@ -1,4 +1,7 @@
-package edu.sdccd.mesa.cisc210.fizzbuzz;
+package edu.sdccd.mesa.cisc210.fizzbuzz.controller;
+
+import edu.sdccd.mesa.cisc210.fizzbuzz.ChainOfResponsibility;
+import edu.sdccd.mesa.cisc210.fizzbuzz.Controller;
 
 /**
  * Uses the Factory Method pattern to create the Chain of Responsibility

@@ -10,7 +10,7 @@ public class FizzCommand extends FBCommand {
     @Override
     public void execute(int num, boolean handled) {
         if ((num % 3) == 0) {
-            System.out.print("Fizz");
+            System.out.print("fizz");
             handled = true;
         }
         super.execute(num, handled);

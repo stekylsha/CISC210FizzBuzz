@@ -10,7 +10,7 @@ public class BuzzCommand extends FBCommand {
     @Override
     public void execute(int num, boolean handled) {
         if ((num % 5) == 0) {
-            System.out.print("Buzz");
+            System.out.print("buzz");
             handled = true;
         }
         super.execute(num, handled);

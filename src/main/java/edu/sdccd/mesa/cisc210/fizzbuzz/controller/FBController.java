@@ -1,5 +1,7 @@
-package edu.sdccd.mesa.cisc210.fizzbuzz;
+package edu.sdccd.mesa.cisc210.fizzbuzz.controller;
 
+import edu.sdccd.mesa.cisc210.fizzbuzz.ChainOfResponsibility;
+import edu.sdccd.mesa.cisc210.fizzbuzz.Command;
 import edu.sdccd.mesa.cisc210.fizzbuzz.command.BuzzCommand;
 import edu.sdccd.mesa.cisc210.fizzbuzz.command.DefaultCommand;
 import edu.sdccd.mesa.cisc210.fizzbuzz.command.FizzCommand;
