@@ -8,7 +8,6 @@ public class ChainOfResponsibility {
     }
 
     public void doFb(int num) {
-        System.out.print(" ");
         cmd.execute(num, false);
         System.out.print(" ");
     }

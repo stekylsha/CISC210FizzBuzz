@@ -15,6 +15,7 @@ public abstract class AbstractController implements Controller {
         for (int i = 1 ; i < 42 ; i++) {
             cor.doFb(i);
         }
+        System.out.println();
     }
 
     @Override
