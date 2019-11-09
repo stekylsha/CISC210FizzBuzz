@@ -9,7 +9,7 @@ compileJava {
 }
 
 application {
-    mainClassName = "$moduleName/edu.sdccd.mesa.cisc210.fizzbuzz.FBController"
+    mainClassName = "$moduleName/edu.sdccd.mesa.cisc210.fizzbuzz.Main"
 }
 
 repositories {

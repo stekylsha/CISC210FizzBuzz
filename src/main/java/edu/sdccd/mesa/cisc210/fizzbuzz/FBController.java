@@ -1,22 +1,17 @@
 package edu.sdccd.mesa.cisc210.fizzbuzz;
 
-public class FBController {
+import edu.sdccd.mesa.cisc210.fizzbuzz.command.BuzzCommand;
+import edu.sdccd.mesa.cisc210.fizzbuzz.command.DefaultCommand;
+import edu.sdccd.mesa.cisc210.fizzbuzz.command.FizzCommand;
 
-    private FizzBuzz fb;
+public class FBController extends AbstractController {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        FBController fbc = new FBController();
-        System.out.println();
-        for (int i = 1 ; i < 42; i++) {
-            fbc.fb.doFb(i);
-        }
-        System.out.println();
-    }
-
-    private FBController() {
-        fb = new FizzBuzz();
+    @Override
+    public ChainOfResponsibility getCoR() {
+        Command defaultCmd = new DefaultCommand(null);
+        Command buzzCmd = new BuzzCommand(defaultCmd);
+        Command fizzCmd = new FizzCommand(buzzCmd);
+        ChainOfResponsibility cor = new ChainOfResponsibility(fizzCmd);
+        return cor;
     }
 }
