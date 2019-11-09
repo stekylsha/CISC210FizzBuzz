@@ -1,6 +1,6 @@
 package edu.sdccd.mesa.cisc210.fizzbuzz;
 
-public class FBController {
+public class Main {
 
     private FizzBuzz fb;
 
@@ -8,15 +8,19 @@ public class FBController {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        FBController fbc = new FBController();
-        System.out.println();
-        for (int i = 1 ; i < 42; i++) {
-            fbc.fb.doFb(i);
-        }
-        System.out.println();
+        Main fbc = new Main();
+        fbc.control();
     }
 
-    private FBController() {
+    private Main() {
         fb = new FizzBuzz();
+    }
+
+    private void control() {
+        System.out.println();
+        for (int i = 1 ; i < 42; i++) {
+            fb.doFb(i);
+        }
+        System.out.println();
     }
 }
