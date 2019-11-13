@@ -1,24 +1,25 @@
 package edu.sdccd.mesa.cisc210.fizzbuzz.command;
 
-import edu.sdccd.mesa.cisc210.fizzbuzz.Calculator;
+import edu.sdccd.mesa.cisc210.fizzbuzz.ApproveStrategy;
 import edu.sdccd.mesa.cisc210.fizzbuzz.Command;
 
-public class FBCommand implements Command {
-    private Command cmd;
-    private Calculator calc;
+public abstract class FBCommand implements Command {
+    private Command next;
+    private ApproveStrategy approver;
 
-    protected FBCommand(Command cmd) {
-        this.cmd = cmd;
+    protected FBCommand(Command next, ApproveStrategy approver) {
+        this.next = next;
+        this.approver = approver;
     }
 
     @Override
     public void execute(int num, boolean handled) {
-        if (cmd != null) {
-            cmd.execute(num, handled);
+        if (next != null) {
+            next.execute(num, handled);
         }
     }
 
-    protected boolean calculate(int i, int divisor) {
-        return calc.isEvenlyDivisible(i, divisor);
+    protected boolean approve(int i, int divisor) {
+        return approver.approve(i, divisor);
     }
 }

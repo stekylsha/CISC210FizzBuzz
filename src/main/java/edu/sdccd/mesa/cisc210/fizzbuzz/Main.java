@@ -1,11 +1,11 @@
 package edu.sdccd.mesa.cisc210.fizzbuzz;
 
-import edu.sdccd.mesa.cisc210.fizzbuzz.controller.FBController;
+import edu.sdccd.mesa.cisc210.fizzbuzz.controller.FBBController;
 
 public class Main {
 
     public static void main(String... args) {
-        Controller controller = new FBController();
+        Controller controller = new FBBController();
         controller.control();
     }
 }

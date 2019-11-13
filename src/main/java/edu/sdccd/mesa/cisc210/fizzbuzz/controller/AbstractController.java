@@ -9,15 +9,23 @@ import edu.sdccd.mesa.cisc210.fizzbuzz.Controller;
 public abstract class AbstractController implements Controller {
     private ChainOfResponsibility cor;
 
+    public AbstractController() {
+        init();
+    }
+
+    @Override
+    public void init() {
+        this.cor = createChainOfResponsibility();
+    }
+
+    @Override
+    public abstract ChainOfResponsibility createChainOfResponsibility();
+
     @Override
     public void control() {
-        cor = getCoR();
         for (int i = 1 ; i < 61 ; i++) {
             cor.doFb(i);
         }
         System.out.println();
     }
-
-    @Override
-    public abstract ChainOfResponsibility getCoR();
 }

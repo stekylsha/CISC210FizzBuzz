@@ -1,7 +1,9 @@
 package edu.sdccd.mesa.cisc210.fizzbuzz;
 
 public interface Controller {
-    void control();
+    void init();
 
-    ChainOfResponsibility getCoR();
+    ChainOfResponsibility createChainOfResponsibility();
+
+    void control();
 }

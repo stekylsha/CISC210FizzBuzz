@@ -3,8 +3,8 @@ package edu.sdccd.mesa.cisc210.fizzbuzz.command;
 import edu.sdccd.mesa.cisc210.fizzbuzz.Command;
 
 public class DefaultCommand extends FBCommand {
-    public DefaultCommand(Command cmd) {
-        super(cmd);
+    public DefaultCommand() {
+        super(null, null);
     }
 
     @Override
