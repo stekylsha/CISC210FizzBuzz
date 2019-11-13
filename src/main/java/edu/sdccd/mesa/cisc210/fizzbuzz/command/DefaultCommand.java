@@ -4,7 +4,7 @@ import edu.sdccd.mesa.cisc210.fizzbuzz.Command;
 
 public class DefaultCommand extends FBCommand {
     public DefaultCommand() {
-        super(null, null);
+        super(null);
     }
 
     @Override
