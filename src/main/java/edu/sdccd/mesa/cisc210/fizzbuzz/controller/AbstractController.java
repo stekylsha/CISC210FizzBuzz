@@ -12,7 +12,7 @@ public abstract class AbstractController implements Controller {
     @Override
     public void control() {
         cor = getCoR();
-        for (int i = 1 ; i < 42 ; i++) {
+        for (int i = 1 ; i < 61 ; i++) {
             cor.doFb(i);
         }
         System.out.println();
