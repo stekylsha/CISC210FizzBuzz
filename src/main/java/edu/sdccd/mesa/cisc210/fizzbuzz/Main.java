@@ -18,7 +18,7 @@ public class Main {
 
     private void control() {
         System.out.println();
-        for (int i = 1 ; i < 42; i++) {
+        for (int i = 1 ; i < 60; i++) {
             fb.doFb(i);
         }
         System.out.println();
